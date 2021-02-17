@@ -1,11 +1,7 @@
-// ###################################################################### 
-// # DEBUG_PRINTF
-// ######################################################################
-#define DEBUG_PRINTF
-
 #ifdef DEBUG_PRINTF
 
 #include <stdio.h>
+#include <assert.h>
 
 #define RESET   "\033[0m"
 #define BLACK   "\033[30m"      /* Black */
@@ -24,7 +20,10 @@
 #define DEBUG_ASSERT(x, ...) for(; !(x); assert(x)) DEBUG_RED(__VA_ARGS__);
 
 #else
+
 #define DEBUG(format, ...)
 #define DEBUG_RED(format, ...)
-#define DEBUG_GREEN(format, ...)         
+#define DEBUG_GREEN(format, ...)
+
+#define DEBUG_ASSERT(x, ...)
 #endif
