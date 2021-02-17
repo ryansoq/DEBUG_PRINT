@@ -19,7 +19,12 @@
 
 #define DEBUG(format, ...)          printf(format, ##__VA_ARGS__)
 #define DEBUG_RED(format, ...)      printf(RED format RESET, ##__VA_ARGS__)
+#define DEBUG_GREEN(format, ...)    printf(GREEN format RESET, ##__VA_ARGS__)
+
+#define DEBUG_ASSERT(x, ...) for(; !(x); assert(x)) DEBUG_RED(__VA_ARGS__);
+
 #else
 #define DEBUG(format, ...)
-#define DEBUG_RED(format, ...)          
+#define DEBUG_RED(format, ...)
+#define DEBUG_GREEN(format, ...)         
 #endif
