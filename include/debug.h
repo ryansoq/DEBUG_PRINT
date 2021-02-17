@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include <assert.h>
 
+#include "SHA256.h"
+
 #define RESET   "\033[0m"
 #define BLACK   "\033[30m"      /* Black */
 #define RED     "\033[31m"      /* Red */
@@ -19,6 +21,14 @@
 
 #define DEBUG_ASSERT(x, ...) for(; !(x); assert(x)) DEBUG_RED(__VA_ARGS__);
 
+#define DEBUG_SHA(x, y) { \
+    uint32_t *argHash2 = SHA256Hash(x, y); \
+    printf("SHA-256 : "); \
+    for (int i = 0; i < SHA256_ARRAY_LEN; ++i) \
+	printf("%08" PRIx32 , argHash2[i]); \
+    printf("\n"); \
+} 
+
 #else
 
 #define DEBUG(format, ...)
@@ -26,4 +36,5 @@
 #define DEBUG_GREEN(format, ...)
 
 #define DEBUG_ASSERT(x, ...)
+#define DEBUG_SHA(x, y) 
 #endif
