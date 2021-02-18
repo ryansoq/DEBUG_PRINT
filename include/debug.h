@@ -1,3 +1,6 @@
+#ifndef __DEBUG_H_
+#define __DEBUG_H_
+
 #ifdef DEBUG_PRINTF
 
 #include <stdio.h>
@@ -29,12 +32,15 @@
     printf("\n"); \
 } 
 
-#else
+#else // else DEBUG_PRINTF
 
 #define DEBUG(format, ...)
 #define DEBUG_RED(format, ...)
 #define DEBUG_GREEN(format, ...)
 
 #define DEBUG_ASSERT(x, ...)
-#define DEBUG_SHA(x, y) 
-#endif
+#define DEBUG_SHA(x, y)
+
+#endif // DEBUG_PRINTF
+
+#endif // __DEBUG_H_
