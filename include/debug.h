@@ -1,7 +1,7 @@
 #ifndef __DEBUG_H_
 #define __DEBUG_H_
 
-#ifdef DEBUG_PRINTF
+#ifdef DEBUG_PRINT
 
 #include <stdio.h>
 #include <assert.h>
@@ -32,7 +32,7 @@
     printf("\n"); \
 } 
 
-#else // else DEBUG_PRINTF
+#else // else DEBUG_PRINT
 
 #define DEBUG(format, ...)
 #define DEBUG_RED(format, ...)
@@ -41,6 +41,6 @@
 #define DEBUG_ASSERT(x, ...)
 #define DEBUG_SHA(x, y)
 
-#endif // DEBUG_PRINTF
+#endif // DEBUG_PRINT
 
 #endif // __DEBUG_H_
