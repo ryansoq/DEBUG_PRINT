@@ -1,1 +1,1 @@
-gcc -DDEBUG_PRINTF main.c -o test -I ./include
+gcc -DDEBUG_PRINT main.c -o test -I ./include

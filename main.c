@@ -7,7 +7,7 @@
 int main(int argc, char **argv)
 {
     DEBUG_RED("RED test : %d\n", 2);
-    uint8_t array[5] = "abcde";
+    unsigned char array[5] = "abcde";
     // "a" SHA256 online hash function
     // "ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb"
     DEBUG_SHA(array, 1);
