@@ -22,7 +22,7 @@ int main(int argc, char **argv)
     DEBUG_RED("RED test : %d\n", 2);
     unsigned char array[5] = "abcde";
     // check array
-    // "a" SHA256 online hash function is
+    // "a" SHA256 online (https://emn178.github.io/online-tools/sha256.html) hash function is
     // "ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb"
     // We need get same value.
     DEBUG_SHA(array, 1);
